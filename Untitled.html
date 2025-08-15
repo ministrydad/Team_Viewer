@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Login</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #121212;
+      color: white;
+      margin: 0;
+      padding: 0;
+      display: flex;
+      height: 100vh;
+    }
+
+    /* Left section with cross */
+    .left-panel {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #1e1e1e;
+    }
+
+    .cross-image {
+      width: 200px;
+      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+    }
+
+    /* Right section with login form */
+    .right-panel {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: #181818;
+    }
+
+    .login-box {
+      background: rgba(0, 0, 0, 0.7);
+      padding: 40px;
+      border-radius: 8px;
+      width: 300px;
+    }
+
+    .login-box h2 {
+      text-align: center;
+      margin-bottom: 20px;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 10px;
+      margin: 10px 0;
+      border: none;
+      border-radius: 4px;
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 10px;
+      background: #4cafef;
+      color: white;
+      border: none;
+      border-radius: 4px;
+      cursor: pointer;
+    }
+
+    .login-box button:hover {
+      background: #3a9cdc;
+    }
+  </style>
+</head>
+<body>
+
+  <div class="left-panel">
+    <img src="cross.png" alt="Cross" class="cross-image">
+  </div>
+
+  <div class="right-panel">
+    <div class="login-box">
+      <h2>Login</h2>
+      <input type="text" placeholder="Email">
+      <input type="password" placeholder="Password">
+      <button>Sign In</button>
+    </div>
+  </div>
+
+</body>
+</html>
