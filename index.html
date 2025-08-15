@@ -1,122 +1,242 @@
-<!DOCTYPE html>
-<html lang="en">
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN" "http://www.w3.org/TR/html4/strict.dtd">
+<html>
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Login</title>
-  <style>
-    body {
-      margin: 0;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-      height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: radial-gradient(circle at center, #1a1a1a, #000000);
-      position: relative;
-      overflow: hidden;
-      color: white;
-    }
-    /* Glowing cross background */
-    body::before {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 300px;
-      height: 300px;
-      background:
-        linear-gradient(90deg, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0) 55%),
-        linear-gradient(0deg, rgba(255,255,255,0.15) 45%, rgba(255,255,255,0) 55%);
-      transform: translate(-50%, -50%);
-      filter: blur(8px);
-      box-shadow: 0 0 60px rgba(255, 255, 255, 0.3);
-      z-index: 0;
-    }
-    .login-container {
-      background-color: rgba(0, 0, 0, 0.75);
-      padding: 2rem;
-      border-radius: 12px;
-      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.5);
-      z-index: 1;
-      width: 320px;
-      text-align: center;
-    }
-    h1 {
-      margin-bottom: 1.25rem;
-      font-weight: 600;
-      font-size: 1.5rem;
-    }
-    .field {
-      width: 100%;
-      margin-bottom: 0.9rem;
-      text-align: left;
-    }
-    .field label {
-      display: block;
-      font-size: 0.85rem;
-      margin-bottom: 0.35rem;
-      color: rgba(255, 255, 255, 0.85);
-    }
-    .field input {
-      width: 100%;
-      padding: 0.75rem;
-      border: 1px solid rgba(255,255,255,0.2);
-      background-color: rgba(255, 255, 255, 0.08);
-      color: white;
-      border-radius: 6px;
-      font-size: 1rem;
-      outline: none;
-    }
-    .field input::placeholder {
-      color: rgba(255, 255, 255, 0.6);
-    }
-    button {
-      width: 100%;
-      padding: 0.75rem;
-      background-color: #4cafef;
-      border: none;
-      border-radius: 6px;
-      font-size: 1rem;
-      color: white;
-      cursor: pointer;
-      font-weight: bold;
-      margin-top: 0.25rem;
-    }
-    button:hover { background-color: #3da3e1; }
-    .msg { margin-top: 0.75rem; color: #ff7979; min-height: 1.2em; }
-    .subtle { margin-top: 0.75rem; font-size: 0.85rem; color: rgba(255,255,255,0.7); }
+  <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+  <meta http-equiv="Content-Style-Type" content="text/css">
+  <title></title>
+  <meta name="Generator" content="Cocoa HTML Writer">
+  <meta name="CocoaVersion" content="2487.6">
+  <style type="text/css">
+    span.s1 {font-kerning: none}
   </style>
 </head>
 <body>
-  <div class="login-container">
-    <h1>Sign in</h1>
-    <form onsubmit="return checkLogin(event)">
-      <div class="field">
-        <label for="username">Email</label>
-        <input id="username" type="text" placeholder="you@example.com" required />
-      </div>
-      <div class="field">
-        <label for="password">Password</label>
-        <input id="password" type="password" placeholder="••••••••" required />
-      </div>
-      <button type="submit">Log In</button>
-      <div class="msg" id="message"></div>
-      <div class="subtle">Demo: use <strong>admin</strong> / <strong>password123</strong></div>
-    </form>
-  </div>
-
-  <script>
-    function checkLogin(event) {
-      event.preventDefault();
-      const user = document.getElementById('username').value.trim();
-      const pass = document.getElementById('password').value;
-      if (user === "admin" && pass === "password123") {
-        window.location.href = "home.html";
-      } else {
-        document.getElementById('message').textContent = "Invalid login.";
-      }
-    }
-  </script>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;!DOCTYPE html&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;html lang="en"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;head&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;meta charset="UTF-8"/&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;meta name="viewport" content="width=device-width, initial-scale=1.0"/&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;title&gt;Sign in&lt;/title&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;style&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>:root{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>--bg-dark:#0b0e12;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>--panel:#0f141b;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>--brand:#2ea44f;<span class="Apple-converted-space">        </span>/* green accent */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>--brand-2:#00a3ff;<span class="Apple-converted-space">      </span>/* blue accent */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>--text:#e9eef5;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>--muted:#a9b3be;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>*{box-sizing:border-box}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>html,body{height:100%}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>body{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>margin:0;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>color:var(--text);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background:var(--bg-dark);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:flex;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>min-height:100vh;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* --- Split layout --- */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.shell{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:grid;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>grid-template-columns: 1.2fr 1fr;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>gap:0;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:100%;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>min-height:100vh;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* --- Left: brand / cross hero --- */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.hero{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>position:relative;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>overflow:hidden;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background:</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>radial-gradient(1200px 800px at -10% 110%, rgba(0,163,255,0.12), transparent 60%),</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>radial-gradient(1000px 700px at 110% -10%, rgba(46,164,79,0.12), transparent 60%),</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>linear-gradient(180deg, #0b0e12 0%, #0c1218 100%);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:flex;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>align-items:center;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>justify-content:center;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* Cross with subtle glow (pure CSS; no image needed) */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.cross{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>position:relative;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:360px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>height:360px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>opacity:.9;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>filter:drop-shadow(0 0 24px rgba(255,255,255,.15));</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.cross::before,</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.cross::after{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>content:"";</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>position:absolute;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>top:50%;left:50%;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>transform:translate(-50%,-50%);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, rgba(255,255,255,.15) 45%, rgba(255,255,255,0) 55%);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius:6px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* Vertical bar */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.cross::before{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:64px; height:100%;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 0 120px rgba(0,163,255,.18), 0 0 140px rgba(46,164,79,.18);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* Horizontal bar */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.cross::after{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:100%; height:64px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 0 120px rgba(46,164,79,.18), 0 0 140px rgba(0,163,255,.18);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* Gentle halo behind the cross */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.halo{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>position:absolute; inset:0;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background: radial-gradient(closest-side, rgba(255,255,255,.18), transparent 70%);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>filter: blur(18px);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>opacity:.45;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>transform: scale(1.15);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>pointer-events:none;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.hero-brand{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>position:absolute;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>bottom:32px; left:40px; right:40px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:flex; align-items:center; justify-content:space-between;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>color:var(--muted);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size:.9rem;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>opacity:.85;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.pill{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>padding:.35rem .65rem;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background:linear-gradient(90deg, rgba(0,163,255,.18), rgba(46,164,79,.18));</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.12);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius:999px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>color:var(--text);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>font-weight:600;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>letter-spacing:.2px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* --- Right: auth panel --- */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.panel{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background:linear-gradient(180deg, #0e141b, #0d1218);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:flex;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>align-items:center;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>justify-content:center;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>padding:48px 24px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.card{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:min(400px, 92vw);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background:var(--panel);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.08);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius:16px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow: 0 12px 40px rgba(0,0,0,.45);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>padding:28px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.card h1{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>margin:0 0 8px 0;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>font-size:1.6rem;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>font-weight:700;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>letter-spacing:.2px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>color:var(--text);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.hint{ color:var(--muted); margin:0 0 20px 0; font-size:.95rem; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.field{ margin:0 0 14px 0; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.field label{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:block; font-size:.85rem; color:var(--muted); margin:0 0 6px 0;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.input{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:100%;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>padding:.9rem .95rem;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border-radius:10px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border:1px solid rgba(255,255,255,.12);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background:rgba(255,255,255,.04);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>color:var(--text);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>outline:none;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.input:focus{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border-color:rgba(0,163,255,.45);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>box-shadow:0 0 0 4px rgba(0,163,255,.12);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.btn{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>width:100%;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>padding:.95rem;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>border:0; border-radius:10px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>background: linear-gradient(90deg, var(--brand) 0%, var(--brand-2) 100%);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>color:white; font-weight:700; letter-spacing:.2px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>cursor:pointer;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-top:6px;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.btn:hover{ filter:brightness(1.05); }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.msg{ color:#ff7a7a; min-height:1.2em; margin-top:10px; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.meta{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>margin-top:14px; font-size:.9rem; color:var(--muted);</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.link{ color:#8cc9ff; text-decoration:none; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>.link:hover{ text-decoration:underline; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>/* --- Responsive: stack on small screens --- */</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>@media (max-width: 920px){</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>.shell{ grid-template-columns: 1fr; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>.hero{ height:42vh; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>.hero-brand{ bottom:16px; left:20px; right:20px; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>.cross{ width:280px; height:280px; }</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/style&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;/head&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;body&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;main class="shell"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;!-- Left: brand hero --&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;section class="hero" aria-hidden="true"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="halo"&gt;&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="cross" role="img" aria-label="Cross graphic"&gt;&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="hero-brand"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;span&gt;Community Ministry Toolkit&lt;/span&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;span class="pill"&gt;Secure Access&lt;/span&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/section&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;!-- Right: login panel --&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;section class="panel"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;div class="card"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;h1&gt;Welcome back&lt;/h1&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;p class="hint"&gt;Sign in to access your team tools&lt;/p&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;form onsubmit="return checkLogin(event)" novalidate&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">            </span>&lt;label for="email"&gt;Email&lt;/label&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">            </span>&lt;input id="email" class="input" type="email" placeholder="you@example.org" required&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;div class="field"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">            </span>&lt;label for="password"&gt;Password&lt;/label&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">            </span>&lt;input id="password" class="input" type="password" placeholder="••••••••" required&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;button class="btn" type="submit"&gt;Sign in&lt;/button&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;div id="message" class="msg"&gt;&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;div class="meta"&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">            </span>&lt;a class="link" href="#"&gt;Forgot password?&lt;/a&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">            </span>&lt;span&gt;Demo: &lt;strong&gt;admin&lt;/strong&gt; / &lt;strong&gt;password123&lt;/strong&gt;&lt;/span&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">          </span>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>&lt;/form&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>&lt;/div&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>&lt;/section&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/main&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0); min-height: 22.0px"><span class="s1"><b></b></span><br></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;script&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>function checkLogin(e){</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>e.preventDefault();</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>const email = document.getElementById('email').value.trim();</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>const pass<span class="Apple-converted-space">  </span>= document.getElementById('password').value;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>if(email === 'admin' &amp;&amp; pass === 'password123'){</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>// placeholder until we wire up Supabase</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>window.location.href = 'home.html';</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>}else{</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">        </span>document.getElementById('message').textContent = 'Invalid login.';</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">      </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">    </span>}</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b><span class="Apple-converted-space">  </span>&lt;/script&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;/body&gt;</b></span></h1>
+<h1 style="margin: 0.0px 0.0px 15.0px 0.0px; font: 18.0px Tahoma; color: #ffffff; -webkit-text-stroke: #ffffff; background-color: #ffffff; background-color: rgba(255, 255, 255, 0)"><span class="s1"><b>&lt;/html&gt;</b></span></h1>
 </body>
 </html>
