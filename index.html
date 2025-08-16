@@ -25,53 +25,46 @@
       font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
 
-    /* Container holds cross + login */
-    .wrapper{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      gap:40px;
-      max-width:1000px;
-      width:90%;
-    }
-
-    /* Cross section */
-    .cross-wrap{
-      position:relative;
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      max-width:420px;
-    }
-    .cross-wrap::before{
-      content:"";
-      position:absolute; inset:0;
-      background: radial-gradient(closest-side, rgba(255,255,255,.12), transparent 70%);
-      filter: blur(12px);
-      opacity:.35;
-      transform: scale(1.1);
-    }
-    .cross{
-      max-width:100%;
-      height:auto;
-      display:block;
-      filter:
-        drop-shadow(0 0 12px rgba(255,255,255,.12))
-        drop-shadow(0 0 24px rgba(0,163,255,.12))
-        drop-shadow(0 0 32px rgba(46,164,79,.08));
-    }
-
-    /* Login card */
+    /* Main container with cross + login inside */
     .card{
-      flex:1;
-      max-width:420px;
+      display:flex;
+      max-width:900px;
+      width:90%;
       background:var(--panel);
       border:1px solid var(--border);
       border-radius:16px;
       box-shadow:0 12px 40px rgba(0,0,0,.45);
-      padding:28px;
+      overflow:hidden;
     }
+
+    /* Left side (cross) */
+    .left{
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:var(--bg);
+      padding:20px;
+    }
+    .cross{
+      max-width:60%;   /* reduced size to about half */
+      height:auto;
+      display:block;
+      filter:
+        drop-shadow(0 0 6px rgba(255,255,255,.12))
+        drop-shadow(0 0 12px rgba(0,163,255,.12))
+        drop-shadow(0 0 16px rgba(46,164,79,.08));
+    }
+
+    /* Right side (form) */
+    .right{
+      flex:1;
+      padding:32px;
+      display:flex;
+      flex-direction:column;
+      justify-content:center;
+    }
+
     .title{ margin:0 0 6px 0; font-size:1.7rem; font-weight:800; }
     .hint{ margin:0 0 18px 0; color:var(--muted); }
 
@@ -104,19 +97,21 @@
     .link{ color:#8cc9ff; text-decoration:none; }
     .link:hover{ text-decoration:underline; }
 
-    /* Stack on small screens */
+    /* Stack on mobile */
     @media (max-width: 768px){
-      .wrapper{ flex-direction:column; }
+      .card{ flex-direction:column; }
+      .left{ padding:40px; }
+      .cross{ max-width:40%; }
     }
   </style>
 </head>
 <body>
-  <div class="wrapper">
-    <div class="cross-wrap">
+  <div class="card">
+    <div class="left">
       <img src="cross.png" alt="Cross" class="cross" onerror="this.style.display='none'"/>
     </div>
 
-    <div class="card">
+    <div class="right">
       <h1 class="title">Welcome back</h1>
       <p class="hint">Sign in to access your team tools</p>
 
