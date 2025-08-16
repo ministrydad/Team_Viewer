@@ -1,92 +1,193 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Login</title>
+  <meta charset="UTF-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>Sign in</title>
   <style>
-    body {
-      font-family: Arial, sans-serif;
-      background-color: #121212;
-      color: white;
-      margin: 0;
-      padding: 0;
-      display: flex;
-      height: 100vh;
+    :root{
+      --bg:#0b0e12;
+      --panel:#0f141b;
+      --ink:#e8eef6;
+      --muted:#a8b2be;
+      --accentA:#2ea44f;   /* green */
+      --accentB:#00a3ff;   /* blue */
+      --border:rgba(255,255,255,.08);
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0;
+      background:var(--bg);
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+      min-height:100vh;
+      display:grid;
+      grid-template-columns: 1.2fr 1fr; /* left hero, right form */
     }
 
-    /* Left section with cross */
-    .left-panel {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #1e1e1e;
+    /* LEFT: hero with cross */
+    .hero{
+      position:relative;
+      overflow:hidden;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      background:
+        radial-gradient(1200px 800px at -10% 110%, rgba(0,163,255,0.12), transparent 60%),
+        radial-gradient(1000px 700px at 110% -10%, rgba(46,164,79,0.12), transparent 60%),
+        linear-gradient(180deg, #0b0e12 0%, #0c1218 100%);
+    }
+    .cross-wrap{
+      position:relative;
+      display:flex; align-items:center; justify-content:center;
+      width:min(420px, 72vw);
+      aspect-ratio:1/1;
+    }
+    .cross-wrap::before{
+      content:"";
+      position:absolute; inset:0;
+      background: radial-gradient(closest-side, rgba(255,255,255,.22), transparent 70%);
+      filter: blur(18px);
+      opacity:.5;
+      transform: scale(1.12);
+    }
+    .cross{
+      max-width: 68%;
+      height:auto;
+      display:block;
+      /* subtle glow around the actual image */
+      filter:
+        drop-shadow(0 0 24px rgba(255,255,255,.18))
+        drop-shadow(0 0 48px rgba(0,163,255,.18))
+        drop-shadow(0 0 64px rgba(46,164,79,.12));
     }
 
-    .cross-image {
-      width: 200px;
-      filter: drop-shadow(0 0 20px rgba(255, 255, 255, 0.6));
+    .hero-brand{
+      position:absolute; left:32px; right:32px; bottom:28px;
+      display:flex; align-items:center; justify-content:space-between;
+      font-size:.95rem; color:var(--muted);
+    }
+    .pill{
+      padding:.35rem .65rem;
+      background:linear-gradient(90deg, rgba(0,163,255,.18), rgba(46,164,79,.18));
+      border:1px solid var(--border);
+      border-radius:999px;
+      color:var(--ink);
+      font-weight:600;
+      letter-spacing:.2px;
     }
 
-    /* Right section with login form */
-    .right-panel {
-      flex: 1;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background-color: #181818;
+    /* RIGHT: login card */
+    .panel{
+      display:flex; align-items:center; justify-content:center;
+      background:linear-gradient(180deg, #0e141b, #0d1218);
+      padding:48px 24px;
+    }
+    .card{
+      width:min(420px, 92vw);
+      background:var(--panel);
+      border:1px solid var(--border);
+      border-radius:16px;
+      box-shadow: 0 12px 40px rgba(0,0,0,.45);
+      padding:28px;
+    }
+    .title{ margin:0 0 6px 0; font-size:1.7rem; font-weight:800; letter-spacing:.2px; }
+    .hint{ margin:0 0 18px 0; color:var(--muted); }
+
+    .field{ margin-bottom:14px; }
+    .label{ display:block; font-size:.85rem; color:var(--muted); margin:0 0 6px 0; }
+    .input{
+      width:100%; padding:.95rem;
+      border-radius:10px; border:1px solid var(--border);
+      background:rgba(255,255,255,.04); color:var(--ink);
+      outline:none;
+    }
+    .input:focus{
+      border-color:rgba(0,163,255,.45);
+      box-shadow:0 0 0 4px rgba(0,163,255,.12);
     }
 
-    .login-box {
-      background: rgba(0, 0, 0, 0.7);
-      padding: 40px;
-      border-radius: 8px;
-      width: 300px;
+    .btn{
+      width:100%; padding:.95rem;
+      border:0; border-radius:10px;
+      background:linear-gradient(90deg, var(--accentA), var(--accentB));
+      color:white; font-weight:800; letter-spacing:.2px;
+      cursor:pointer; margin-top:6px;
     }
+    .btn:hover{ filter:brightness(1.05); }
+    .msg{ color:#ff7a7a; min-height:1.2em; margin-top:10px; }
 
-    .login-box h2 {
-      text-align: center;
-      margin-bottom: 20px;
+    .meta{
+      margin-top:14px; font-size:.9rem; color:var(--muted);
+      display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;
     }
+    .link{ color:#8cc9ff; text-decoration:none; }
+    .link:hover{ text-decoration:underline; }
 
-    .login-box input {
-      width: 100%;
-      padding: 10px;
-      margin: 10px 0;
-      border: none;
-      border-radius: 4px;
-    }
-
-    .login-box button {
-      width: 100%;
-      padding: 10px;
-      background: #4cafef;
-      color: white;
-      border: none;
-      border-radius: 4px;
-      cursor: pointer;
-    }
-
-    .login-box button:hover {
-      background: #3a9cdc;
+    /* Responsive: stack */
+    @media (max-width: 920px){
+      body{ grid-template-columns: 1fr; }
+      .hero{ height:42vh; }
+      .hero-brand{ bottom:16px; left:20px; right:20px; }
+      .cross-wrap{ width:70vw; }
     }
   </style>
 </head>
 <body>
 
-  <div class="left-panel">
-    <img src="cross.png" alt="Cross" class="cross-image">
-  </div>
-
-  <div class="right-panel">
-    <div class="login-box">
-      <h2>Login</h2>
-      <input type="text" placeholder="Email">
-      <input type="password" placeholder="Password">
-      <button>Sign In</button>
+  <!-- LEFT -->
+  <section class="hero" aria-hidden="true">
+    <div class="cross-wrap">
+      <!-- your image file placed next to index.html -->
+      <img src="cross.png" alt="Cross" class="cross" onerror="this.style.display='none'"/>
     </div>
-  </div>
+    <div class="hero-brand">
+      <span>Community Ministry Toolkit</span>
+      <span class="pill">Secure Access</span>
+    </div>
+  </section>
 
+  <!-- RIGHT -->
+  <section class="panel">
+    <div class="card">
+      <h1 class="title">Welcome back</h1>
+      <p class="hint">Sign in to access your team tools</p>
+
+      <form onsubmit="return demoLogin(event)" novalidate>
+        <div class="field">
+          <label class="label" for="email">Email</label>
+          <input id="email" class="input" type="email" placeholder="you@example.org" required>
+        </div>
+
+        <div class="field">
+          <label class="label" for="password">Password</label>
+          <input id="password" class="input" type="password" placeholder="••••••••" required>
+        </div>
+
+        <button class="btn" type="submit">Sign in</button>
+        <div id="message" class="msg"></div>
+
+        <div class="meta">
+          <a class="link" href="#">Forgot password?</a>
+          <span>Demo: <strong>admin</strong> / <strong>password123</strong></span>
+        </div>
+      </form>
+    </div>
+  </section>
+
+  <script>
+    // Temporary client-side demo until Supabase auth is wired
+    function demoLogin(e){
+      e.preventDefault();
+      const email = document.getElementById('email').value.trim();
+      const pass  = document.getElementById('password').value;
+      if(email === 'admin' && pass === 'password123'){
+        window.location.href = 'home.html';
+      }else{
+        document.getElementById('message').textContent = 'Invalid login.';
+      }
+    }
+  </script>
 </body>
 </html>
