@@ -26,9 +26,9 @@
 
     .container {
       display: flex;
-      width: 900px;
+      width: 850px;
       max-width: 95%;
-      height: 550px;
+      height: 500px;
       background: var(--card-bg);
       border-radius: 20px;
       overflow: hidden;
@@ -41,14 +41,13 @@
       align-items: center;
       justify-content: center;
       padding: 20px;
-      background: radial-gradient(circle at center, rgba(0,163,255,0.05), transparent 70%),
-                  linear-gradient(135deg, #0b0e12, #141a22);
+      /* ✨ Soft gradient only behind the cross */
+      background: radial-gradient(circle at center, rgba(0,163,255,0.12), transparent 70%);
     }
 
     .left img {
-      max-width: 50%;
+      max-width: 45%;
       height: auto;
-      filter: drop-shadow(0 0 12px rgba(0,163,255,0.25));
     }
 
     .right {
@@ -57,7 +56,7 @@
       align-items: center;
       justify-content: center;
       padding: 40px;
-      background: #1b222c;
+      background: #1b222c; /* unchanged */
     }
 
     .login-box {
