@@ -10,90 +10,69 @@
       --panel:#0f141b;
       --ink:#e8eef6;
       --muted:#a8b2be;
-      --accentA:#2ea44f;   /* green */
-      --accentB:#00a3ff;   /* blue */
+      --accentA:#2ea44f;
+      --accentB:#00a3ff;
       --border:rgba(255,255,255,.08);
     }
     *{box-sizing:border-box}
-    html,body{height:100%}
+    html,body{height:100%; margin:0;}
     body{
-      margin:0;
-      background:var(--bg);
-      color:var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
-      min-height:100vh;
-      display:grid;
-      grid-template-columns: 1.2fr 1fr; /* left hero, right form */
-    }
-
-    /* LEFT: hero with cross */
-    .hero{
-      position:relative;
-      overflow:hidden;
       display:flex;
       align-items:center;
       justify-content:center;
-      background:
-        radial-gradient(1200px 800px at -10% 110%, rgba(0,163,255,0.12), transparent 60%),
-        radial-gradient(1000px 700px at 110% -10%, rgba(46,164,79,0.12), transparent 60%),
-        linear-gradient(180deg, #0b0e12 0%, #0c1218 100%);
+      background:var(--bg);
+      color:var(--ink);
+      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
     }
+
+    /* Container holds cross + login */
+    .wrapper{
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      gap:40px;
+      max-width:1000px;
+      width:90%;
+    }
+
+    /* Cross section */
     .cross-wrap{
       position:relative;
-      display:flex; align-items:center; justify-content:center;
-      width:min(420px, 72vw);
-      aspect-ratio:1/1;
+      flex:1;
+      display:flex;
+      align-items:center;
+      justify-content:center;
+      max-width:420px;
     }
     .cross-wrap::before{
       content:"";
       position:absolute; inset:0;
-      background: radial-gradient(closest-side, rgba(255,255,255,.22), transparent 70%);
-      filter: blur(18px);
-      opacity:.5;
-      transform: scale(1.12);
+      background: radial-gradient(closest-side, rgba(255,255,255,.12), transparent 70%);
+      filter: blur(12px);
+      opacity:.35;
+      transform: scale(1.1);
     }
     .cross{
-      max-width: 68%;
+      max-width:100%;
       height:auto;
       display:block;
-      /* subtle glow around the actual image */
       filter:
-        drop-shadow(0 0 24px rgba(255,255,255,.18))
-        drop-shadow(0 0 48px rgba(0,163,255,.18))
-        drop-shadow(0 0 64px rgba(46,164,79,.12));
-      image-rendering: -webkit-optimize-contrast;
+        drop-shadow(0 0 12px rgba(255,255,255,.12))
+        drop-shadow(0 0 24px rgba(0,163,255,.12))
+        drop-shadow(0 0 32px rgba(46,164,79,.08));
     }
 
-    .hero-brand{
-      position:absolute; left:32px; right:32px; bottom:28px;
-      display:flex; align-items:center; justify-content:space-between;
-      font-size:.95rem; color:var(--muted);
-    }
-    .pill{
-      padding:.35rem .65rem;
-      background:linear-gradient(90deg, rgba(0,163,255,.18), rgba(46,164,79,.18));
-      border:1px solid var(--border);
-      border-radius:999px;
-      color:var(--ink);
-      font-weight:600;
-      letter-spacing:.2px;
-    }
-
-    /* RIGHT: login card */
-    .panel{
-      display:flex; align-items:center; justify-content:center;
-      background:linear-gradient(180deg, #0e141b, #0d1218);
-      padding:48px 24px;
-    }
+    /* Login card */
     .card{
-      width:min(420px, 92vw);
+      flex:1;
+      max-width:420px;
       background:var(--panel);
       border:1px solid var(--border);
       border-radius:16px;
-      box-shadow: 0 12px 40px rgba(0,0,0,.45);
+      box-shadow:0 12px 40px rgba(0,0,0,.45);
       padding:28px;
     }
-    .title{ margin:0 0 6px 0; font-size:1.7rem; font-weight:800; letter-spacing:.2px; }
+    .title{ margin:0 0 6px 0; font-size:1.7rem; font-weight:800; }
     .hint{ margin:0 0 18px 0; color:var(--muted); }
 
     .field{ margin-bottom:14px; }
@@ -102,18 +81,17 @@
       width:100%; padding:.95rem;
       border-radius:10px; border:1px solid var(--border);
       background:rgba(255,255,255,.04); color:var(--ink);
-      outline:none;
     }
     .input:focus{
       border-color:rgba(0,163,255,.45);
       box-shadow:0 0 0 4px rgba(0,163,255,.12);
+      outline:none;
     }
-
     .btn{
       width:100%; padding:.95rem;
       border:0; border-radius:10px;
       background:linear-gradient(90deg, var(--accentA), var(--accentB));
-      color:white; font-weight:800; letter-spacing:.2px;
+      color:white; font-weight:800;
       cursor:pointer; margin-top:6px;
     }
     .btn:hover{ filter:brightness(1.05); }
@@ -126,31 +104,18 @@
     .link{ color:#8cc9ff; text-decoration:none; }
     .link:hover{ text-decoration:underline; }
 
-    /* Responsive: stack */
-    @media (max-width: 920px){
-      body{ grid-template-columns: 1fr; }
-      .hero{ height:42vh; }
-      .hero-brand{ bottom:16px; left:20px; right:20px; }
-      .cross-wrap{ width:70vw; }
+    /* Stack on small screens */
+    @media (max-width: 768px){
+      .wrapper{ flex-direction:column; }
     }
   </style>
 </head>
 <body>
-
-  <!-- LEFT -->
-  <section class="hero" aria-hidden="true">
+  <div class="wrapper">
     <div class="cross-wrap">
-      <!-- Make sure cross.png has a transparent background -->
       <img src="cross.png" alt="Cross" class="cross" onerror="this.style.display='none'"/>
     </div>
-    <div class="hero-brand">
-      <span>Community Ministry Toolkit</span>
-      <span class="pill">Secure Access</span>
-    </div>
-  </section>
 
-  <!-- RIGHT -->
-  <section class="panel">
     <div class="card">
       <h1 class="title">Welcome back</h1>
       <p class="hint">Sign in to access your team tools</p>
@@ -160,25 +125,21 @@
           <label class="label" for="email">Email</label>
           <input id="email" class="input" type="email" placeholder="you@example.org" required>
         </div>
-
         <div class="field">
           <label class="label" for="password">Password</label>
           <input id="password" class="input" type="password" placeholder="••••••••" required>
         </div>
-
         <button class="btn" type="submit">Sign in</button>
         <div id="message" class="msg"></div>
-
         <div class="meta">
           <a class="link" href="#">Forgot password?</a>
           <span>Demo: <strong>admin</strong> / <strong>password123</strong></span>
         </div>
       </form>
     </div>
-  </section>
+  </div>
 
   <script>
-    // Temporary client-side demo until Supabase auth is wired
     function demoLogin(e){
       e.preventDefault();
       const email = document.getElementById('email').value.trim();
