@@ -1,150 +1,122 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8"/>
-  <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>Sign in</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Login</title>
   <style>
-    :root{
-      --bg:#0b0e12;
-      --panel:#0f141b;
-      --ink:#e8eef6;
-      --muted:#a8b2be;
-      --accentA:#2ea44f;
-      --accentB:#00a3ff;
-      --border:rgba(255,255,255,.08);
-    }
-    *{box-sizing:border-box}
-    html,body{height:100%; margin:0;}
-    body{
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:var(--bg);
-      color:var(--ink);
-      font-family: ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+    :root {
+      --bg: #0b0e12;
+      --card-bg: #141a22;
+      --accent: #00a3ff;
+      --text: #ffffff;
+      --muted: #8a8f98;
     }
 
-    /* Main container with cross + login inside */
-    .card{
-      display:flex;
-      max-width:900px;
-      width:90%;
-      background:var(--panel);
-      border:1px solid var(--border);
-      border-radius:16px;
-      box-shadow:0 12px 40px rgba(0,0,0,.45);
-      overflow:hidden;
+    body {
+      margin: 0;
+      font-family: 'Segoe UI', sans-serif;
+      background: var(--bg);
+      color: var(--text);
+      display: flex;
+      height: 100vh;
+      align-items: center;
+      justify-content: center;
     }
 
-    /* Left side (cross) */
-    .left{
-      flex:1;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      background:var(--bg);
-      padding:20px;
-    }
-    .cross{
-      max-width:60%;   /* reduced size to about half */
-      height:auto;
-      display:block;
-      filter:
-        drop-shadow(0 0 6px rgba(255,255,255,.12))
-        drop-shadow(0 0 12px rgba(0,163,255,.12))
-        drop-shadow(0 0 16px rgba(46,164,79,.08));
+    .container {
+      display: flex;
+      width: 900px;
+      max-width: 95%;
+      height: 550px;
+      background: var(--card-bg);
+      border-radius: 20px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.6);
     }
 
-    /* Right side (form) */
-    .right{
-      flex:1;
-      padding:32px;
-      display:flex;
-      flex-direction:column;
-      justify-content:center;
+    .left {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 20px;
+      background: radial-gradient(circle at center, rgba(0,163,255,0.05), transparent 70%),
+                  linear-gradient(135deg, #0b0e12, #141a22);
     }
 
-    .title{ margin:0 0 6px 0; font-size:1.7rem; font-weight:800; }
-    .hint{ margin:0 0 18px 0; color:var(--muted); }
+    .left img {
+      max-width: 50%;
+      height: auto;
+      filter: drop-shadow(0 0 12px rgba(0,163,255,0.25));
+    }
 
-    .field{ margin-bottom:14px; }
-    .label{ display:block; font-size:.85rem; color:var(--muted); margin:0 0 6px 0; }
-    .input{
-      width:100%; padding:.95rem;
-      border-radius:10px; border:1px solid var(--border);
-      background:rgba(255,255,255,.04); color:var(--ink);
+    .right {
+      flex: 1;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px;
+      background: #1b222c;
     }
-    .input:focus{
-      border-color:rgba(0,163,255,.45);
-      box-shadow:0 0 0 4px rgba(0,163,255,.12);
-      outline:none;
-    }
-    .btn{
-      width:100%; padding:.95rem;
-      border:0; border-radius:10px;
-      background:linear-gradient(90deg, var(--accentA), var(--accentB));
-      color:white; font-weight:800;
-      cursor:pointer; margin-top:6px;
-    }
-    .btn:hover{ filter:brightness(1.05); }
-    .msg{ color:#ff7a7a; min-height:1.2em; margin-top:10px; }
 
-    .meta{
-      margin-top:14px; font-size:.9rem; color:var(--muted);
-      display:flex; justify-content:space-between; gap:8px; flex-wrap:wrap;
+    .login-box {
+      width: 100%;
+      max-width: 300px;
     }
-    .link{ color:#8cc9ff; text-decoration:none; }
-    .link:hover{ text-decoration:underline; }
 
-    /* Stack on mobile */
-    @media (max-width: 768px){
-      .card{ flex-direction:column; }
-      .left{ padding:40px; }
-      .cross{ max-width:40%; }
+    .login-box h2 {
+      margin-bottom: 24px;
+      text-align: center;
+      font-size: 1.6rem;
+    }
+
+    .login-box input {
+      width: 100%;
+      padding: 12px;
+      margin-bottom: 16px;
+      border: none;
+      border-radius: 8px;
+      background: #2a3240;
+      color: var(--text);
+      font-size: 1rem;
+    }
+
+    .login-box input::placeholder {
+      color: var(--muted);
+    }
+
+    .login-box button {
+      width: 100%;
+      padding: 12px;
+      border: none;
+      border-radius: 8px;
+      background: var(--accent);
+      color: #fff;
+      font-size: 1rem;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background 0.3s ease;
+    }
+
+    .login-box button:hover {
+      background: #0085d6;
     }
   </style>
 </head>
 <body>
-  <div class="card">
+  <div class="container">
     <div class="left">
-      <img src="cross.png" alt="Cross" class="cross" onerror="this.style.display='none'"/>
+      <img src="cross.png" alt="Cross">
     </div>
-
     <div class="right">
-      <h1 class="title">Welcome back</h1>
-      <p class="hint">Sign in to access your team tools</p>
-
-      <form onsubmit="return demoLogin(event)" novalidate>
-        <div class="field">
-          <label class="label" for="email">Email</label>
-          <input id="email" class="input" type="email" placeholder="you@example.org" required>
-        </div>
-        <div class="field">
-          <label class="label" for="password">Password</label>
-          <input id="password" class="input" type="password" placeholder="••••••••" required>
-        </div>
-        <button class="btn" type="submit">Sign in</button>
-        <div id="message" class="msg"></div>
-        <div class="meta">
-          <a class="link" href="#">Forgot password?</a>
-          <span>Demo: <strong>admin</strong> / <strong>password123</strong></span>
-        </div>
-      </form>
+      <div class="login-box">
+        <h2>Login</h2>
+        <input type="text" placeholder="Username" />
+        <input type="password" placeholder="Password" />
+        <button>Sign In</button>
+      </div>
     </div>
   </div>
-
-  <script>
-    function demoLogin(e){
-      e.preventDefault();
-      const email = document.getElementById('email').value.trim();
-      const pass  = document.getElementById('password').value;
-      if(email === 'admin' && pass === 'password123'){
-        window.location.href = 'home.html';
-      }else{
-        document.getElementById('message').textContent = 'Invalid login.';
-      }
-    }
-  </script>
 </body>
 </html>
